@@ -11,12 +11,19 @@ def birthday_list():
 
 def list_check(birthdays):
     check_birthdays = set(birthdays)
-    if len(check_birthdays) < len(birthdays)        
+    while True:
+        if len(check_birthdays) < len(birthdays):
+            print("match")
+            return True
+        else:
+            print("no matches")
+            return False
 
 
-
-
-
-
-dates = birthday_list()
-list_check(dates)
+def main():
+    matches = 0
+    dates = birthday_list()
+    list_check(dates)
+    if list_check is True:
+        matches = 0 + 1
+        print(matches)
