@@ -5,25 +5,25 @@ def birthday_list():
     birthdays = []
     for x in range(23):
         birthdays.append(random.randint(1, 365))
-    print(birthdays)
     return birthdays
 
 
 def list_check(birthdays):
     check_birthdays = set(birthdays)
-    while True:
-        if len(check_birthdays) < len(birthdays):
-            print("match")
-            return True
-        else:
-            print("no matches")
-            return False
+    if len(check_birthdays) < len(birthdays):
+        return True
+    else:
+        return False
 
 
 def main():
     matches = 0
-    dates = birthday_list()
-    list_check(dates)
-    if list_check is True:
-        matches = 0 + 1
-        print(matches)
+    how_many = int(input("How many times would you like to run this?"))
+    for x in range(how_many):
+        dates = birthday_list()
+        if list_check(dates) is True:
+            matches = matches + 1
+    print("There were", matches, "matches")
+
+
+main()
